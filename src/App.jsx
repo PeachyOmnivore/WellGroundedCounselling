@@ -13,6 +13,7 @@ function App() {
 
   return (
     <>
+      <NavigationBar/>
       <Routes>
             <Route path="/" element={<Home />} />
             <Route path="about" element={<About />} />
@@ -21,7 +22,6 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
-      <NavigationBar/>
     </>
   )
 }
