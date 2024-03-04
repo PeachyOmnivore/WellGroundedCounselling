@@ -6,6 +6,7 @@ import MyApproach from './pages/myApproach'
 import ServicesAndFees from './pages/servicesAndFees'
 import Contact from './pages/contact'
 import PrivacyPolicy from './pages/privacyPolicy'
+import NavigationBar from './components/navigationBar'
 
 
 function App() {
@@ -20,6 +21,7 @@ function App() {
             <Route path="contact" element={<Contact />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
       </Routes>
+      <NavigationBar/>
     </>
   )
 }
