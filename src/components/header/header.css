@@ -1,0 +1,7 @@
+.header {
+  display: grid;
+  place-content: center;
+
+  height: 200px;
+  background-color: #f4f3EA;
+}
