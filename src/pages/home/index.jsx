@@ -1,9 +1,11 @@
 import "./home.css"
+import Header from "../../components/header"
 
-function Home () {
+function Home() {
   return (
-    <>
-    </>
+    <div>
+      <Header/>
+    </div>
   )
 }
 
