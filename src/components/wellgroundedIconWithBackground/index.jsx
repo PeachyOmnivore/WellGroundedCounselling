@@ -1,8 +1,9 @@
 import wellGroundedIcon from "../../assets/svgs/wellgrounded-horizontal-background.svg"
 
-function WellGroundedIconWithBackground() {
+// eslint-disable-next-line react/prop-types
+function WellGroundedIconWithBackground({size}) {
   return (
-    <img src={wellGroundedIcon} width="300px" />
+    <img src={wellGroundedIcon} width={size} />
   )
 }
 
