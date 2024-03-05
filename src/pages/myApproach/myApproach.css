@@ -1,0 +1,23 @@
+.my-approach-container {
+  display: grid;
+  place-content: center;
+  height: 96vh;
+  background-image: url('../../assets/images/nsplsh_9896bfc9c61c4427a66c51ce52fb1414~mv2.webp');
+  background-size: cover;
+}
+
+.my-approach-details h1 {
+  font-weight: 400;
+  font-size: 50px;
+}
+
+.my-approach-details p {
+  font-weight: 200;
+}
+
+.my-approach-details {
+  color: #f3f4ea;
+  background-color: black;
+  width: 50vw;
+  padding: 70px;
+}
