@@ -1,7 +1,7 @@
 .services-and-fee-container {
   display: grid;
   grid-template-rows: repeat(3, 200px) 50px ;
-  height: 86vh;
+  height: 88vh;
 
   place-items: center;;
   padding: 100px 200px 0px 200px;
@@ -30,6 +30,8 @@
 .types-of-counselling section {
   display: grid;
   border: solid 1px #f3f4ea;
+  border-radius: 10px;
+  box-shadow: rgba(235, 125, 89, 0.826) 5px 5px 20px 1px;
   margin: 20px;
   padding: 30px;
 }
