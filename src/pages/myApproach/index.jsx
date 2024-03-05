@@ -15,7 +15,7 @@ function MyApproach() {
         <p>
           We will look at your emotions and behaviour through a compassionate lens and identify past pain that may be affecting the present.  It is very likely that old wounds are impacting your current emotions, actions and worldview.  While you can’t always control your external circumstances, transforming your internal world will influence how you relate to the external world.</p><br /><br />
 
-        <h2>What you can expect: </h2>
+        <h2>What you can expect</h2>
         <br />
         <p>
           I am committed to providing a warm and judgment-free space, where you can express yourself authentically. You get to choose what to bring to each session and what to talk about. I offer various exercises, including visualisations and somatic work, which you can try at your own pace. Between sessions, I may suggest optional "homework" for reflection and integrating insights. This is entirely voluntary and a tool for your personal self-discovery.</p><br /><br />
