@@ -11,13 +11,18 @@
   font-size: 50px;
 }
 
+.my-approach-details h2 {
+  font-weight: 400;
+}
+
 .my-approach-details p {
   font-weight: 200;
+  font-size: 15px;
 }
 
 .my-approach-details {
   color: #f3f4ea;
   background-color: black;
-  width: 50vw;
+  width: 45vw;
   padding: 70px;
 }
