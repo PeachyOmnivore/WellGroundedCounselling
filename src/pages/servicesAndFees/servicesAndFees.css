@@ -1,0 +1,55 @@
+.services-and-fee-container {
+  display: grid;
+  grid-template-rows: repeat(3, 200px) 50px ;
+  height: 86vh;
+
+  place-items: center;;
+  padding: 100px 200px 0px 200px;
+
+  background-color: #c55a36;
+  color: #f3f4ea;
+}
+
+.services-and-fee-container > div {
+  text-align: center;
+}
+
+.services-and-fee-container > div h1 {
+  padding: 10px;
+}
+
+.services-and-fee-container p h2 {
+  text-align: center;
+}
+
+.types-of-counselling {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.types-of-counselling section {
+  display: grid;
+  border: solid 1px #f3f4ea;
+  margin: 20px;
+  padding: 30px;
+}
+
+.types-of-counselling section h2 {
+  padding-bottom: 20px;
+}
+
+.services-and-fee-container button {
+  border: #f4f3EA solid 1px;
+  background-color: #c55a36;
+  color: #f4f3EA;
+}
+
+.services-and-fee-container button:hover {
+  background-color: #f4f3EA;
+  color: #c55a36;
+}
+
+.services-and-fee-container button:active {
+  background-color: #c55a36b5;
+}
+
