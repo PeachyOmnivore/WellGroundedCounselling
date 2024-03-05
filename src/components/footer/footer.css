@@ -1,0 +1,30 @@
+.footer {
+  display: grid;
+  place-items: center;
+  grid-template-columns: 1fr 1fr 1fr;
+  background-color: #5B612E;
+}
+
+.footer p {
+  color: #f4f3EA;
+}
+
+.footer img {
+  margin: 20px;
+  width: 500px;
+}
+
+.footer button {
+  border: #f4f3EA solid 1px;
+  color: #f4f3EA;
+  background-color: #5B612E;
+}
+
+.footer button:hover {
+  background-color: #f4f3EA;
+  color: #5B612E;
+}
+
+.footer button:active {
+  background-color: #f4f3ea71;
+}
