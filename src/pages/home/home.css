@@ -1,11 +1,11 @@
 .home-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2, 1fr);
 }
 
 .home-grid section {
   display: grid;
-
+  height: 900px;
   background-color: #f4f3EA;
   padding: 0px 175px 0px 175px
 }
@@ -19,11 +19,11 @@
 
 .img-container {
   width: 50vw;
+  height: 900px;
 }
 
 .home-img {
- width: 1200px;
- object-fit: cover;
- z-index: 100;
+  object-fit: contain;
+  width: 1200px;
+  z-index: 100;
 }
-
