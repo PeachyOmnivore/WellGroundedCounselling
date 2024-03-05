@@ -1,0 +1,18 @@
+.button {
+  border-radius: 25px;
+  width: 120px;
+  height: 50px;
+  cursor: pointer;
+  border: #5C642C solid 1px;
+  transition: animate;
+}
+
+.button:hover {
+  background-color: #5C642C;
+  color: #f4f3EA;
+  transition: 2ms;
+}
+
+.button:active {
+  background-color: #5c642c87;
+}
