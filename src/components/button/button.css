@@ -4,13 +4,13 @@
   height: 50px;
   cursor: pointer;
   border: #5C642C solid 1px;
-  transition: animate;
+  transition: background-color 0.7s ease;
 }
 
 .button:hover {
+  transition: background-color 0.7s ease;
   background-color: #5C642C;
   color: #f4f3EA;
-  transition: 2ms;
 }
 
 .button:active {
