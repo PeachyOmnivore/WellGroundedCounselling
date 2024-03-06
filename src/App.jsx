@@ -7,6 +7,9 @@ import ServicesAndFees from './pages/servicesAndFees'
 import Contact from './pages/contact'
 import PrivacyPolicy from './pages/privacyPolicy'
 import NavigationBar from './components/navigationBar'
+import Booking from './components/booking'
+import Login from './components/login'
+import Register from './components/register'
 
 
 function App() {
@@ -19,8 +22,11 @@ function App() {
             <Route path="about" element={<About />} />
             <Route path="my-approach" element={<MyApproach />} />
             <Route path="services-and-fees" element={<ServicesAndFees />} />
+            <Route path="booking" element={<Booking />} />
             <Route path="contact" element={<Contact />} />
             <Route path="privacy-policy" element={<PrivacyPolicy />} />
+            <Route path="login" element={<Login />} />
+            <Route path="register" element={<Register />} />
       </Routes>
     </>
   )
