@@ -1,20 +1,34 @@
 .navigation_bar {
+  display: grid;
+  grid-template-columns: .9fr .2fr;
   background-color: black;
   height: 40px;
+  
 }
 
-.navigation_bar ul li{
+.navigation_bar ul, li{
   display: inline-block;
   text-decoration: none;
   list-style: none;
-  margin-top: 10px;
+  margin-top: 5px;
 }
 
 .link {
   text-decoration: none;
 }
 
+.link.currentPage {
+  text-decoration: underline;
+  color: #c55a36
+}
+
+.link.right p {
+  color: rgba(255, 255, 255, 0.786);
+  padding: 0px 15px
+}
+
 .navigation_bar ul li p {
   color: rgba(255, 255, 255, 0.786);
   padding: 0px 15px
 }
+
