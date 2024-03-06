@@ -7,9 +7,9 @@ import ServicesAndFees from './pages/servicesAndFees'
 import Contact from './pages/contact'
 import PrivacyPolicy from './pages/privacyPolicy'
 import NavigationBar from './components/navigationBar'
-import Booking from './components/booking'
-import Login from './components/login'
-import Register from './components/register'
+import Booking from './pages/booking'
+import Login from './pages/login'
+import Register from './pages/register'
 
 
 function App() {

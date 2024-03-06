@@ -10,7 +10,7 @@ function Home() {
   const navigate = useNavigate()
 
   return (
-    <div>
+    <div className="home-container">
       <Header />
       <div className="home-grid">
         <div className="img-container">
