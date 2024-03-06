@@ -6,11 +6,11 @@
   
 }
 
-.navigation_bar ul, li{
+.navigation_bar ul li{
   display: inline-block;
   text-decoration: none;
   list-style: none;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .link {
