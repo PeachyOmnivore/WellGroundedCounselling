@@ -37,6 +37,10 @@
   font-weight: 100;
 }
 
+.form-titles a {
+  color: #f3f4ea;
+}
+
 .form-container input, textarea, select {
   color: #f3f4ea;
   background-color: rgb(55, 54, 54);
