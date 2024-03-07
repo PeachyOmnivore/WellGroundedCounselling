@@ -1,0 +1,90 @@
+.register-container {
+  display: grid;
+  place-items: center;
+  height: 96vh;
+  background-color: #f3f4ea;
+}
+
+.register-form-container {
+  width: 600px;
+  padding: 20px;
+  background-color: #c55a36;
+  border-radius: 10px;
+  border: black solid 2px;
+}
+
+.register-form-container h2 {
+  text-align: center;
+}
+
+.register-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding: 20px;
+}
+
+.register-header img {
+  position: relative;
+  right: -100px;
+}
+
+.register-header h1 {
+  position: relative;
+  right: -130px;
+  font-size: 34px;
+}
+
+.register-container form {
+  display: grid;
+}
+
+.register-container input, .register-container select {
+  color: #f3f4ea;
+  background-color: rgb(55, 54, 54);
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: #f3f4ea solid 1px;
+}
+
+.register-container form label, .register-container form button {
+  display: block;
+  color: #f3f4ea;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+
+.register-container form button {
+  border-radius: 25px;
+  height: 50px;
+  cursor: pointer;
+  border: #f3f4ea solid 1px;
+  background-color: black;
+  transition: background-color 0.7s ease;
+}
+
+.register-container form button:hover {
+  transition: background-color 0.7s ease;
+  background-color: #f3f4ea;
+  color: #000;
+}
+
+.register-container form button:active {
+  background-color: #f3f4ea2d;
+}
+
+.checkbox {
+  position: relative;
+  left: 5px;
+  top: 10px;
+}
+
+.register-container a {
+  color: #f3f4ea;
+  position: relative;
+  left: 190px;
+  top: 5px;
+}
