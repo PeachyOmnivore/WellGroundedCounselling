@@ -88,3 +88,9 @@
   left: 190px;
   top: 5px;
 }
+
+.register-container p {
+  color: #f3f4ea;
+  position: relative;
+  text-align: center;
+}
