@@ -43,7 +43,7 @@ function Contact() {
           <input
             type="text"
             name="name"
-            required="true"
+            required={true}
             placeholder="Enter your name"
             value={formData.name}
             onInput={(event) => { onInput(event) }}
@@ -52,7 +52,7 @@ function Contact() {
           <input
             type="email"
             name="email"
-            required="true"
+            required={true}
             placeholder="Enter your email"
             value={formData.email}
             onChange={(event) => { onInput(event) }}
@@ -69,7 +69,7 @@ function Contact() {
           <textarea
             type="text"
             name="message"
-            required="true"
+            required={true}
             placeholder="Enter your message"
             value={formData.message}
             onChange={(event) => { onInput(event) }}
