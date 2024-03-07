@@ -41,7 +41,7 @@
   color: #f3f4ea;
 }
 
-.form-container input, textarea, select {
+.form-container input, .form-container textarea, .form-container select {
   color: #f3f4ea;
   background-color: rgb(55, 54, 54);
   width: 50vw;
@@ -55,7 +55,7 @@
   height: 100px;
 }
 
-.form-container label, button {
+.form-container label, .form-container button {
   display: block;
   width: 50.5vw;
   margin-top: 20px;
