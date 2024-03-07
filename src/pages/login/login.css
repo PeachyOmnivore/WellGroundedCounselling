@@ -1,4 +1,87 @@
 .login-container {
+  display: grid;
+  place-items: center;
   height: 96vh;
   background-color: #f3f4ea;
+}
+
+.login-form-container {
+  height: 600px;
+  width: 600px;
+  padding: 20px;
+  background-color: #5B612E;
+  border-radius: 10px;
+  border: black solid 2px;
+}
+
+.login-header {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  place-items: center;
+  padding: 20px;
+}
+
+.login-header img {
+  position: relative;
+  right: -100px;
+}
+
+.login-header h1 {
+  position: relative;
+  right: -130px;
+  font-size: 34px;
+}
+
+.login-container form {
+  display: grid;
+}
+
+.login-container input, .login-container select {
+  color: #f3f4ea;
+  background-color: rgb(55, 54, 54);
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+  border: #f3f4ea solid 1px;
+}
+
+.login-container form label, .login-container form button {
+  display: block;
+  color: #f3f4ea;
+  width: 100%;
+  margin-top: 20px;
+  margin-bottom: 5px;
+  font-weight: 200;
+}
+
+.login-container form button {
+  border-radius: 25px;
+  height: 50px;
+  cursor: pointer;
+  border: #f3f4ea solid 1px;
+  background-color: black;
+  transition: background-color 0.7s ease;
+}
+
+.login-container form button:hover {
+  transition: background-color 0.7s ease;
+  background-color: #f3f4ea;
+  color: #000;
+}
+
+.login-container form button:active {
+  background-color: #f3f4ea2d;
+}
+
+.checkbox {
+  position: relative;
+  left: 5px;
+  top: 10px;
+}
+
+.login-container a {
+  color: #f3f4ea;
+  position: relative;
+  left: 200px;
+  top: 70px;
 }
