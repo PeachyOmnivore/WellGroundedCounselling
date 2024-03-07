@@ -6,7 +6,7 @@ import WGClogo from '../../assets/images/thumbnail-arch.png'
 function Login() {
 
   const INITIAL_STATE = {
-    emailOrUsername: "",
+    email: "",
     password: "",
     remember: false,
   }
@@ -39,13 +39,13 @@ function Login() {
           <img src={WGClogo} width="70px" alt="Well grounded counselling logo" />
         </div>
         <form onSubmit={handleLogin}>
-          <label htmlFor="email">Email or Username:</label>
+          <label htmlFor="email">Email:</label>
           <input
-            type="text"
-            name="emailOrUsername"
+            type="email"
+            name="email"
             required={true}
             placeholder="Enter your email or username"
-            value={loginData.emailOrUsername}
+            value={loginData.email}
             onChange={onInput}
           />
           <label htmlFor="subject">Password:</label>
