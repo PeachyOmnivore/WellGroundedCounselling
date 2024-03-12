@@ -1,42 +1,67 @@
-import "./login.css"
-import { useState } from "react"
-import { NavLink } from "react-router-dom"
-import WGClogo from '../../assets/images/thumbnail-arch.png'
+import "./login.css";
+import { useState } from "react";
+import { NavLink } from "react-router-dom";
+import { post } from "../../client-functions/index.js";
+import WGClogo from "../../assets/images/thumbnail-arch.png";
 
 function Login() {
-
   const INITIAL_STATE = {
     email: "",
     password: "",
     remember: false,
-  }
+  };
 
-  const [loginData, setLoginData] = useState(INITIAL_STATE)
-
+  const [loginData, setLoginData] = useState(INITIAL_STATE);
+  const [loginResponse, setloginResponse] = useState("");
 
   const onInput = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
 
     setLoginData({
       ...loginData,
       [name]: value,
-    })
-  }
+    });
+  };
 
-  const handleLogin = (event) => {
-    event.preventDefault()
-    event.target.reset()
-    console.log(loginData)
+  const handleLogin = async (event) => {
+    event.preventDefault();
+    
+    try {
+      const data = await post(loginData, "users/login");
+      console.log("DATA OUTSIDE OF FETCH...", data);
 
-    setLoginData(INITIAL_STATE)
-  }
+      if (!data.token) {
+        event.preventDefault();
+        setloginResponse(data.message);
+
+      } else {
+        setloginResponse(data.message);
+
+        if (loginData.remember) {
+          localStorage.setItem("token", data.token);
+        }
+      }
+
+    } catch (err) {
+      event.preventDefault();
+      setloginResponse(err.message);
+    }
+
+    event.preventDefault();
+    event.target.reset();
+    setLoginData(INITIAL_STATE);
+  };
 
   return (
     <div className="login-container">
       <section className="login-form-container">
         <div className="login-header">
           <h1>Welcome Back!</h1>
-          <img src={WGClogo} width="70px" alt="Well grounded counselling logo" />
+          <img
+            src={WGClogo}
+            width="70px"
+            alt="Well grounded counselling logo"
+          />
         </div>
         <form onSubmit={handleLogin}>
           <label htmlFor="email">Email:</label>
@@ -57,15 +82,26 @@ function Login() {
             value={loginData.password}
             onChange={onInput}
           />
-          <label htmlFor="remember">Remember me?
-            <input className="checkbox" type="checkbox"  checked={loginData.remember} name="remember" value={true} onChange={(event) => { onInput(event) }} />
+          <label htmlFor="remember">
+            Remember me?
+            <input
+              className="checkbox"
+              type="checkbox"
+              checked={loginData.remember}
+              name="remember"
+              value={true}
+              onChange={(event) => {
+                onInput(event);
+              }}
+            />
           </label>
           <button type="submit">LOGIN</button>
         </form>
+        {loginResponse && <p>{loginResponse}</p>}
         <NavLink to="/register">Create a new account</NavLink>
       </section>
     </div>
-  )
+  );
 }
 
-export default Login
+export default Login;
