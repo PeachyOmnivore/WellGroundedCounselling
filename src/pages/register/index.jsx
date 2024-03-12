@@ -1,79 +1,79 @@
-import "./register.css"
-import { useState } from "react"
-import { NavLink, useNavigate } from "react-router-dom"
-import { post } from  "../../client-functions/index.js"
-import WGClogo from '../../assets/images/thumbnail-arch.png'
+import "./register.css";
+import { useState } from "react";
+import { NavLink, useNavigate } from "react-router-dom";
+import { post } from "../../client-functions/index.js";
+import WGClogo from "../../assets/images/thumbnail-arch.png";
 
 function Register() {
-
   const INITIAL_STATE = {
     firstName: "",
     lastName: "",
     phone: "",
     email: "",
-    password: ""
-  }
+    password: "",
+  };
 
-  const [registerData, setRegisterData] = useState(INITIAL_STATE)
-  const [confirmPass, setConfirmPass] = useState({ confirmPass: "" })
-  const [registerResponse, setRegisterResponse] = useState('');
-  const navigate = useNavigate()
-
+  const [registerData, setRegisterData] = useState(INITIAL_STATE);
+  const [confirmPass, setConfirmPass] = useState({ confirmPass: "" });
+  const [registerResponse, setRegisterResponse] = useState("");
+  const navigate = useNavigate();
 
   const onInput = (event) => {
-    const { name, value } = event.target
+    const { name, value } = event.target;
 
     if (name === "confirmPass") {
       setConfirmPass({
         [name]: value,
-      })
-      return
+      });
+      return;
     }
 
     setRegisterData({
       ...registerData,
       [name]: value,
-    })
-  }
+    });
+  };
 
   const handleRegister = (event) => {
-
+    
     if (registerData.password !== confirmPass.confirmPass) {
-      event.preventDefault()
-      alert("Passwords do not match")
-      return
+      event.preventDefault();
+      alert("Passwords do not match");
+      return;
     }
 
     try {
-         const data =  post(registerData, "register")
-          if (!data.user) {
-            setRegisterResponse(data.error)
-            return
-
-          } else {
-            setRegisterResponse("New account registered")
-            localStorage.setItem("token", data.token)
-            navigate("/")
-            return
-          }
-        }
-        catch (err) {
-      setRegisterResponse(err.message)
-      console.log(registerResponse)
+      const data = post(registerData, "register");
+      if (!data.user) {
+        setRegisterResponse(data.error);
+        return;
+      } else {
+        setRegisterResponse("New account registered");
+        localStorage.setItem("token", data.token);
+        navigate("/");
+        return;
+      }
+    } catch (err) {
+      setRegisterResponse(err.message);
+      console.log(registerResponse);
     }
-    
-    event.preventDefault()
-    event.target.reset()
-    setRegisterData(INITIAL_STATE)
-    confirmPass.confirmPass = ""
-  }
+
+    event.preventDefault();
+    event.target.reset();
+    setRegisterData(INITIAL_STATE);
+    confirmPass.confirmPass = "";
+  };
 
   return (
     <div className="register-container">
       <section className="register-form-container">
         <div className="register-header">
           <h1>Welcome!</h1>
-          <img src={WGClogo} width="70px" alt="Well grounded counselling logo" />
+          <img
+            src={WGClogo}
+            width="70px"
+            alt="Well grounded counselling logo"
+          />
         </div>
         <h2>Register a new account</h2>
         <form onSubmit={handleRegister}>
@@ -140,7 +140,7 @@ function Register() {
         <NavLink to="/login">Login to an existing account</NavLink>
       </section>
     </div>
-  )
+  );
 }
 
-export default Register
+export default Register;
