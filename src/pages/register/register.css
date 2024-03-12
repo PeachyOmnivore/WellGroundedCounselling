@@ -91,6 +91,8 @@
 
 .register-container p {
   color: #f3f4ea;
+  font-weight: 600;
+  margin-top: 10px;
   position: relative;
   text-align: center;
 }
