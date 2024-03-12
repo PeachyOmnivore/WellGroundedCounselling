@@ -1,22 +1,26 @@
-const URL = "http://localhost:5173"
+const serverURL = "http://localhost:3030"
 
 function get() {
   console.log("hi")
 }
 
-function post(bodyData, endpoint) {
-
+async function post(bodyData, endpoint) {
   const options = {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(bodyData)
+  };
+
+  const response = await fetch(`${serverURL}/${endpoint}`, options);
+
+  console.log("RESPONSE", response)
+
+  if (!response.ok) {
+    throw new Error(`Error: ${response.status} - ${response.statusText}`);
   }
 
-  fetch(`${URL}/${endpoint}`, options)
-        .then(res => res.json())
-        .then((data) => {
-          return data
-        })
+  const data = await response.json();
+  return data;
 }
 
 function put() {
