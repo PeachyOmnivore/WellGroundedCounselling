@@ -25,7 +25,6 @@ function Login() {
 
   const handleLogin = async (event) => {
     event.preventDefault();
-    
     try {
       const data = await post(loginData, "users/login");
       console.log("DATA OUTSIDE OF FETCH...", data);

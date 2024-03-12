@@ -35,27 +35,30 @@ function Register() {
   };
 
   const handleRegister = (event) => {
-    
+
     if (registerData.password !== confirmPass.confirmPass) {
       event.preventDefault();
       alert("Passwords do not match");
       return;
     }
 
+    event.preventDefault()
+
     try {
       const data = post(registerData, "register");
       if (!data.user) {
-        setRegisterResponse(data.error);
-        return;
+        setRegisterResponse(data.message);
+  
       } else {
         setRegisterResponse("New account registered");
         localStorage.setItem("token", data.token);
         navigate("/");
-        return;
+        return
       }
+
     } catch (err) {
       setRegisterResponse(err.message);
-      console.log(registerResponse);
+      console.log("CATCH RESPONSE -------", registerResponse);
     }
 
     event.preventDefault();
