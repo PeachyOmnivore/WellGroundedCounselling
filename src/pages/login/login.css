@@ -82,6 +82,12 @@
 .login-container a {
   color: #f3f4ea;
   position: relative;
-  left: 200px;
+  left: 215px;
   top: 70px;
+}
+
+.login-container p {
+  color: #f3f4ea;
+  text-align: center;
+  margin-top: 10px;
 }
