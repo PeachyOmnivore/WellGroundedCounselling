@@ -27,26 +27,21 @@ function Login() {
     event.preventDefault();
     try {
       const data = await post(loginData, "users/login");
-      console.log("DATA OUTSIDE OF FETCH...", data);
 
       if (!data.token) {
-        event.preventDefault();
         setloginResponse(data.message);
 
       } else {
         setloginResponse(data.message);
-
         if (loginData.remember) {
           localStorage.setItem("token", data.token);
         }
       }
 
     } catch (err) {
-      event.preventDefault();
       setloginResponse(err.message);
     }
 
-    event.preventDefault();
     event.target.reset();
     setLoginData(INITIAL_STATE);
   };
