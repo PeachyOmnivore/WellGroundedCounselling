@@ -50,7 +50,7 @@ function Register() {
             } else {
                 setRegisterResponse("New account registered");
                 localStorage.setItem("token", data.token);
-                navigate("/");
+                setTimeout(() => navigate("/"), 2000);
                 return;
             }
 

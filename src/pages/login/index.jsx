@@ -1,6 +1,6 @@
 import "./login.css";
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useNavigate } from "react-router-dom";
 import { post } from "../../client-functions/index.js";
 import WGClogo from "../../assets/images/thumbnail-arch.png";
 
@@ -11,6 +11,7 @@ function Login() {
     remember: false,
   };
 
+  const navigate = useNavigate()
   const [loginData, setLoginData] = useState(INITIAL_STATE);
   const [loginResponse, setloginResponse] = useState("");
 
@@ -36,6 +37,7 @@ function Login() {
         if (loginData.remember) {
           localStorage.setItem("token", data.token);
         }
+        setTimeout(() => navigate('/'), 2000)
       }
 
     } catch (err) {
