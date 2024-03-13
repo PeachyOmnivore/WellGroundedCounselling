@@ -7,9 +7,6 @@ import { useState } from "react"
 function NavigationBar({ currentUser, setCurrentUser }) {
 
   const [showPopup, setShowPopup] = useState(false)
-
-  console.log("CURRENT USER INSIDE NAVBAR", currentUser)
-
   const location = useLocation();
   const path = location.pathname;
 
