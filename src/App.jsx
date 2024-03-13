@@ -19,8 +19,6 @@ function App() {
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState('')
 
-
-
   useEffect(() => {
     async function findUser() {
       try {
