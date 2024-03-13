@@ -1,0 +1,25 @@
+.popUpCard-container {
+  display: grid;
+  position: relative;
+  top: 15px;
+  right: 15px;
+  width: 200px;
+  background-color: #5B612E;
+  border-radius: 10px;
+  border: black solid 2px;
+}
+
+.popUpCard-container > * {
+  text-align: center;
+  border-bottom: 1px black solid;
+  height: 30px;
+  margin-top: 5px;
+  text-decoration: none;
+  color: #f3f4f3;
+}
+
+.popUpCard-container > *:hover {
+  color: #c55a36;
+  cursor: pointer;
+}
+
