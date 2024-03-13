@@ -1,5 +1,5 @@
 import './App.css'
-import { Route, Routes } from 'react-router-dom'
+import { Route, Routes, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
 import { get } from './client-functions/index.js'
 import Home from './pages/home'
@@ -16,29 +16,31 @@ import Register from './pages/register'
 
 function App() {
 
+  const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState('')
 
-  async function findUser() {
-    try {
-      const foundUser = await get("users/me");
-      setCurrentUser(foundUser);
-      if (!foundUser) {
-        console.log("No logged in user")
-      }
-    } catch (err) {
-      console.error('Error fetching user info:', err);
-    }
-  }
+
 
   useEffect(() => {
+    async function findUser() {
+      try {
+        const foundUser = await get("users/me");
+        setCurrentUser(foundUser);
+        if (!foundUser) {
+          navigate('/')
+        }
+      } catch (err) {
+        console.error('Error fetching user info:', err);
+      }
+    }
     findUser()
-  }, [])
+  }, [navigate])
 
   console.log(currentUser)
 
   return (
     <>
-      <NavigationBar currentUser={currentUser}/>
+      <NavigationBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
