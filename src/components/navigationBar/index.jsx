@@ -4,7 +4,7 @@ import { NavLink, useLocation } from "react-router-dom"
 import PopUpCard from '../popupCard/index'
 import { useState } from "react"
 
-function NavigationBar({ currentUser }) {
+function NavigationBar({ currentUser, setCurrentUser }) {
 
   const [showPopup, setShowPopup] = useState(false)
 
@@ -20,7 +20,7 @@ function NavigationBar({ currentUser }) {
         <li><NavLink className={path === "/about" ? "link currentPage" : "link"} to={'/about'}><p>About</p></NavLink></li>
         <li><NavLink className={path === "/my-approach" ? "link currentPage" : "link"} to={'/my-approach'}><p>My approach</p></NavLink></li>
         <li><NavLink className={path === "/services-and-fees" ? "link currentPage" : "link"} to={'/services-and-fees'}><p>Services and fees</p></NavLink></li>
-        <li><NavLink className={path === "/booking" ? "link currentPage" : "link"} to={'/booking'}><p>Book a session</p></NavLink></li>
+        {currentUser && <li><NavLink className={path === "/booking" ? "link currentPage" : "link"} to={'/booking'}><p>Book a session</p></NavLink></li>}
         <li><NavLink className={path === "/contact" ? "link currentPage" : "link"} to={'/contact'}><p>Contact</p></NavLink></li>
         <li><NavLink className={path === "/privacy-policy" ? "link currentPage" : "link"} to={'/privacy-policy'}><p>Privacy policy</p></NavLink></li>
       </ul>
@@ -28,7 +28,13 @@ function NavigationBar({ currentUser }) {
         {currentUser.foundUser ? (
           <>
             <li><a onClick={() => setShowPopup(!showPopup)} className="link right"><p>{`Welcome ${currentUser.foundUser.firstName}`}</p></a></li>
-            {showPopup ? (<PopUpCard><p>Change password</p><NavLink to={'/'} onClick={() => localStorage.removeItem("token")}><p>Logout</p></NavLink></PopUpCard>) : (null)}
+            {showPopup ? (
+              <PopUpCard>
+                <p>Change password</p>
+                <NavLink to={'/booking'}><p>Book a session</p></NavLink>
+                <NavLink to={'/'} onClick={() => { localStorage.removeItem("token"); setCurrentUser('') }}><p>Logout</p></NavLink>
+              </PopUpCard>)
+              : (null)}
           </>
         ) : (
           <>
