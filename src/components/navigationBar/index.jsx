@@ -1,10 +1,14 @@
 /* eslint-disable react/prop-types */
 import "./navigationBar.css"
 import { NavLink, useLocation } from "react-router-dom"
+import PopUpCard from '../popupCard/index'
+import { useState } from "react"
 
 function NavigationBar({ currentUser }) {
 
-  console.log("CURRENT USER INSIDE NAVBAR",currentUser)
+  const [showPopup, setShowPopup] = useState(false)
+
+  console.log("CURRENT USER INSIDE NAVBAR", currentUser)
 
   const location = useLocation();
   const path = location.pathname;
@@ -23,13 +27,13 @@ function NavigationBar({ currentUser }) {
       <ul>
         {currentUser.foundUser ? (
           <>
-            <li><NavLink className={path === "/login" ? "link currentPage" : "link right"} to={'/login'}><p>Login</p></NavLink></li>
-            <li><NavLink className={path === "/register" ? "link currentPage" : "link right"} to={'/register'}><p>Register</p></NavLink></li>
+            <li><a onClick={() => setShowPopup(!showPopup)} className="link right"><p>{`Welcome ${currentUser.foundUser.firstName}`}</p></a></li>
+            {showPopup ? (<PopUpCard><p>Change password</p><NavLink to={'/'} onClick={() => localStorage.removeItem("token")}><p>Logout</p></NavLink></PopUpCard>) : (null)}
           </>
         ) : (
           <>
-            {/* <li>{`Welcome ${currentUser.foundUser.firstName}`}Hello</li> */}
-            <li>Logout</li>
+            <li><NavLink className={path === "/login" ? "link currentPage" : "link right"} to={'/login'}><p>Login</p></NavLink></li>
+            <li><NavLink className={path === "/register" ? "link currentPage" : "link right"} to={'/register'}><p>Register</p></NavLink></li>
           </>
         )
         }
