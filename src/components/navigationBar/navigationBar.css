@@ -32,3 +32,8 @@
   padding: 0px 15px
 }
 
+.navigation_bar ul li p:hover {
+  color: #c55a36;
+  cursor: pointer;
+}
+

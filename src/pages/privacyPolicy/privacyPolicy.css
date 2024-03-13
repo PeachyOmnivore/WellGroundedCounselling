@@ -13,7 +13,7 @@
   margin-bottom: 15px;
 }
 
-.privacy-policy-container  h1, h2, p {
+.privacy-policy-container  h1, .privacy-policy-container h2, .privacy-policy-container p {
   padding-bottom: 20px;
 }
 
