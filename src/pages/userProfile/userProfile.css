@@ -1,0 +1,48 @@
+.userProfile-container {
+  display: grid;
+  place-content: center;
+  height: 100vh;
+  background-color: #c55a36;
+}
+
+.userProfile-container h2 {
+  font-weight: 500;
+  margin-bottom: 30px;
+}
+
+.user-details {
+  display: grid;
+  place-items: center;
+  background-color: #f3f4f3;
+  border: black 2px solid;
+  padding: 40px;
+}
+.user-details form label {
+  font-weight: 400;
+  margin-bottom: 5px;
+}
+
+.user-details form input, .user-details form span {
+  margin-bottom: 10px;
+  background-color: #5b612e6e;
+  height: 30px;
+  padding: 5px;
+  border-radius: 5px;
+}
+
+.user-details form {
+  display: grid;
+  margin-bottom: 50px
+}
+
+.userProfile-container button {
+  width: 100px;
+  height: 30px;
+  margin-left: 20px;
+  margin-bottom: 3px;
+}
+
+.editSaveButton {
+position: relative;
+left: 20px;
+}
