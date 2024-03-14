@@ -24,7 +24,7 @@ async function get(endpoint) {
         return data;
 
     } catch (err) {
-        console.error("Error fetching user info:", err);
+        console.error("Error fetching requested info:", err);
     }
 }
 
