@@ -35,7 +35,7 @@ function App() {
     findUser()
   }, [navigate])
 
-  console.log(currentUser)
+  console.log(currentUser.foundUser)
 
   return (
     <>
@@ -50,7 +50,7 @@ function App() {
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
-        <Route path="myProfile" element={<UserProfile />} />
+        <Route path="myProfile" element={<UserProfile user={currentUser.foundUser} />} />
       </Routes>
     </>
   )
