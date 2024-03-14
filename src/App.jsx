@@ -12,6 +12,7 @@ import NavigationBar from './components/navigationBar'
 import Booking from './pages/booking'
 import Login from './pages/login'
 import Register from './pages/register'
+import UserProfile from './pages/userProfile'
 
 
 function App() {
@@ -49,6 +50,7 @@ function App() {
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="login" element={<Login />} />
         <Route path="register" element={<Register />} />
+        <Route path="myProfile" element={<UserProfile />} />
       </Routes>
     </>
   )
