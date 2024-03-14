@@ -41,5 +41,19 @@ async function post(bodyData, endpoint) {
     return data;
 }
 
+async function put(bodyData, endpoint) {
+    const options = {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(bodyData),
+    };
+    
+    console.log(options.body)
+    const response = await fetch(`${serverURL}/${endpoint}`, options);
 
-export { get, post };
+    const data = await response.json();
+    return data;
+}
+
+
+export { get, post, put };
