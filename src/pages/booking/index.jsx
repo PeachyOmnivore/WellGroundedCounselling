@@ -4,7 +4,7 @@ import { get, put } from "../../client-functions";
 import "./booking.css";
 import Button from "../../components/button";
 
-function Booking({currentUser}) {
+function Booking({ currentUser }) {
 
   const [availableDates, setAvailableDates] = useState(null);
 
@@ -39,17 +39,17 @@ function Booking({currentUser}) {
 
   return (
     <div className="booking-container">
-        <h1>Current availabililties</h1>
+      <h1>Current availabililties</h1>
       <section className="availableDates-container">
         {availableDates ? (
           <ul className="day-container">
             {availableDates.map((date) => (
               <li key={date.id}>
                 <h2>{date.month} {date.day}</h2>
-                <ul>
+                <ul className="timeslot-container">
                   {date.timeSlots.map((slot) => (
-                    <li key={slot.id}>
-                      {slot.time} - {slot.status} <Button text={"Book"} onClick={() => BookATimeSlot(currentUser.foundUser.id, slot.id)}/>
+                    <li className="timeslot" key={slot.id}>
+                      {slot.time} - {slot.status} <Button className={slot.status === "Unavailable"? "disable": ""} text={"Book"} onClick={() => BookATimeSlot(currentUser.foundUser.id, slot.id)} />
                     </li>
                   ))}
                 </ul>

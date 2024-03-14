@@ -39,6 +39,20 @@
   font-weight: 400;
 }
 
+.timeslot-container {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  height: 150px;
+  align-items: center;
+}
+
+.timeslot {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+  justify-items: start;
+}
+
 .availableDates-container ul ul button {
   height: 30px;
   width: 80px;
@@ -48,6 +62,10 @@
   background-color: rgba(0, 0, 0, 0.37);
   color: #f3f4ea;
   transition: background-color 0.7s ease;
+}
+
+.disable {
+  display: none;
 }
 
 .availableDates-container ul ul button:hover {
