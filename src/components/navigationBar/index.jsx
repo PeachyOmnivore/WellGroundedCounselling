@@ -27,8 +27,8 @@ function NavigationBar({ currentUser, setCurrentUser }) {
             <li><a onClick={() => setShowPopup(!showPopup)} className="link right"><p>{`Welcome ${currentUser.foundUser.firstName}`}</p></a></li>
             {showPopup ? (
               <PopUpCard>
-                <p>Change password</p>
                 <NavLink to={'/booking'}><p>Book a session</p></NavLink>
+                <NavLink to={'/myProfile'}><p>Profile / Bookings</p></NavLink>
                 <NavLink to={'/'} onClick={() => { localStorage.removeItem("token"); setCurrentUser('') }}><p>Logout</p></NavLink>
               </PopUpCard>)
               : (null)}
