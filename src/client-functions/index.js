@@ -41,7 +41,7 @@ async function post(bodyData, endpoint) {
     return data;
 }
 
-async function put(bodyData, endpoint) {
+async function put(bodyData = {}, endpoint) {
     const options = {
         method: "PUT",
         headers: { "Content-Type": "application/json" },
