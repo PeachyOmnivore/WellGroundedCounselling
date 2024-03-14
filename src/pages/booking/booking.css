@@ -51,13 +51,14 @@
   grid-template-columns: repeat(2, 1fr);
   align-items: center;
   justify-items: start;
+  margin: 0px 50px 0px 50px
 }
 
 .availableDates-container ul ul button {
   height: 30px;
   width: 80px;
   margin-top: 5px;
-  margin-left: 30px;
+  margin-left: 80px;
   border: #f3f4ea solid 1px;
   background-color: rgba(0, 0, 0, 0.37);
   color: #f3f4ea;
