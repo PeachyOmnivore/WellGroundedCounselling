@@ -1,9 +1,10 @@
+/* eslint-disable react/prop-types */
 import { useEffect, useState } from "react";
-import { get } from "../../client-functions";
+import { get, put } from "../../client-functions";
 import "./booking.css";
 import Button from "../../components/button";
 
-function Booking() {
+function Booking({currentUser}) {
 
   const [availableDates, setAvailableDates] = useState(null);
 
@@ -11,6 +12,20 @@ function Booking() {
     try {
       const foundBookings = await get("bookings");
       setAvailableDates(foundBookings.foundBookings);
+    } catch (err) {
+      console.error('Error fetching booking info:', err);
+    }
+  }
+
+  async function BookATimeSlot(userId, timeSlotId) {
+
+    const bodyData = {
+      userId: userId
+    }
+
+    try {
+      await put(bodyData, `bookings/${timeSlotId}`);
+      findBookings()
     } catch (err) {
       console.error('Error fetching booking info:', err);
     }
@@ -34,7 +49,7 @@ function Booking() {
                 <ul>
                   {date.timeSlots.map((slot) => (
                     <li key={slot.id}>
-                      {slot.time} - {slot.status} <Button text={"Book"}/>
+                      {slot.time} - {slot.status} <Button text={"Book"} onClick={() => BookATimeSlot(currentUser.foundUser.id, slot.id)}/>
                     </li>
                   ))}
                 </ul>
