@@ -1,7 +1,7 @@
 .my-approach-container {
   display: grid;
   place-content: center;
-  height: 96vh;
+  height: 100vh;
   background-image: url('../../assets/images/nsplsh_9896bfc9c61c4427a66c51ce52fb1414~mv2.webp');
   background-size: cover;
 }

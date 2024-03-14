@@ -1,7 +1,7 @@
 .services-and-fee-container {
   display: grid;
   grid-template-rows: repeat(3, 200px) 50px ;
-  height: 88vh;
+  height: 100vh;
 
   place-items: center;;
   padding: 100px 200px 0px 200px;

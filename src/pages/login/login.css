@@ -1,7 +1,7 @@
 .login-container {
   display: grid;
   place-items: center;
-  height: 96vh;
+  height: 100vh;
   background-color: #f3f4ea;
 }
 
