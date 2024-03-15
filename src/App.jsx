@@ -24,6 +24,7 @@ function App() {
     async function findUser() {
       try {
         const foundUser = await get("users/me");
+        console.log(foundUser)
         setCurrentUser(foundUser);
         if (!foundUser) {
           navigate('/')
@@ -34,8 +35,6 @@ function App() {
     }
     findUser()
   }, [navigate])
-
-  console.log(currentUser.foundUser)
 
   return (
     <>
