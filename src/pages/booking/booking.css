@@ -54,7 +54,7 @@
   margin: 0px 50px 0px 50px
 }
 
-.availableDates-container ul ul button {
+.availableDates-container ul ul button, .addSession {
   height: 30px;
   width: 80px;
   margin-top: 5px;
@@ -65,16 +65,22 @@
   transition: background-color 0.7s ease;
 }
 
+.addSession {
+  margin-top: 15px;
+  width: 150px;
+  height: 50px
+}
+
 .disable {
   display: none;
 }
 
-.availableDates-container ul ul button:hover {
+.availableDates-container ul ul button:hover,  .addSession:hover{
   transition: background-color 0.7s ease;
   background-color: #f3f4ea;
   color: #000;
 }
 
-.availableDates-container ul ul button:active {
+.availableDates-container ul ul button:active, .addSession:active {
   background-color: #f3f4ea2d;
 }
