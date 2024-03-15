@@ -19,13 +19,18 @@ function App() {
 
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState('')
+  const [currentlyAdmin, setCurrentlyAdmin] = useState(false)
 
   useEffect(() => {
     async function findUser() {
       try {
         const foundUser = await get("users/me");
-        console.log(foundUser)
+        if (foundUser.foundUser.role === "ADMIN") {
+          setCurrentlyAdmin(true)
+        }
+        // console.log(foundUser)
         setCurrentUser(foundUser);
+
         if (!foundUser) {
           navigate('/')
         }
@@ -38,13 +43,13 @@ function App() {
 
   return (
     <>
-      <NavigationBar currentUser={currentUser} setCurrentUser={setCurrentUser} />
+      <NavigationBar currentUser={currentUser} setCurrentUser={setCurrentUser} currentlyAdmin={currentlyAdmin} />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="about" element={<About />} />
         <Route path="my-approach" element={<MyApproach />} />
         <Route path="services-and-fees" element={<ServicesAndFees />} />
-        <Route path="booking" element={<Booking currentUser={currentUser}/>} />
+        <Route path="booking" element={<Booking currentUser={currentUser} currentlyAdmin={currentlyAdmin} />} />
         <Route path="contact" element={<Contact />} />
         <Route path="privacy-policy" element={<PrivacyPolicy />} />
         <Route path="login" element={<Login />} />

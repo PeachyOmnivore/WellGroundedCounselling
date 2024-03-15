@@ -2,20 +2,13 @@
 import "./navigationBar.css"
 import { NavLink, useLocation } from "react-router-dom"
 import PopUpCard from '../popupCard/index'
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-function NavigationBar({ currentUser, setCurrentUser }) {
+function NavigationBar({ currentUser, setCurrentUser, currentlyAdmin }) {
 
   const [showPopup, setShowPopup] = useState(false)
-  const [currentlyAdmin, setCurrentlyAdmin] = useState(false)
   const location = useLocation();
   const path = location.pathname;
-
-  useEffect(()=> {
-    if (currentUser.foundUser.role === "ADMIN") {
-      setCurrentlyAdmin(true)
-    }
-  },[currentUser.foundUser.role])
   
 
   return (

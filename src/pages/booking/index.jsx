@@ -4,7 +4,7 @@ import { get, put } from "../../client-functions";
 import "./booking.css";
 import Button from "../../components/button";
 
-function Booking({ currentUser }) {
+function Booking({ currentUser, currentlyAdmin }) {
 
   const [availableDates, setAvailableDates] = useState(null);
 
@@ -18,11 +18,9 @@ function Booking({ currentUser }) {
   }
 
   async function BookATimeSlot(userId, timeSlotId) {
-
     const bodyData = {
       userId: userId
     }
-
     try {
       await put(bodyData, `bookings/${timeSlotId}`);
       findBookings()
@@ -31,11 +29,13 @@ function Booking({ currentUser }) {
     }
   }
 
+  const removeTimeSlot = async () => {
+    console.log("REMOVED")
+  }
+
   useEffect(() => {
     findBookings()
   }, [])
-
-  console.log("AVAILABLE DATES", availableDates)
 
   return (
     <div className="booking-container">
@@ -49,7 +49,7 @@ function Booking({ currentUser }) {
                 <ul className="timeslot-container">
                   {date.timeSlots.map((slot) => (
                     <li className="timeslot" key={slot.id}>
-                      {slot.time} - {slot.status} <Button className={slot.status === "Unavailable"? "disable": ""} text={"Book"} onClick={() => BookATimeSlot(currentUser.foundUser.id, slot.id)} />
+                      {slot.time} - {slot.status} {!currentlyAdmin ? <Button className={slot.status === "Unavailable" ? "disable" : ""} text={"Book"} onClick={() => BookATimeSlot(currentUser.foundUser.id, slot.id)} /> : <Button text={"Remove"} onClick={() => removeTimeSlot()} />}
                     </li>
                   ))}
                 </ul>
