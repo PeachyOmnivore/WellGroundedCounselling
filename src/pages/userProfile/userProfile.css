@@ -2,7 +2,7 @@
   display: grid;
   place-content: center;
   height: 100vh;
-  background-color: #c55a36;
+  background-color: #e8ad48;
 }
 
 .userProfile-container h2 {
@@ -24,7 +24,7 @@
 
 .user-details form input, .user-details form span {
   margin-bottom: 10px;
-  background-color: #5b612e6e;
+  background-color: #c55a3662;
   height: 30px;
   padding: 5px;
   border-radius: 5px;
