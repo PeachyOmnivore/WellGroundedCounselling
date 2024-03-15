@@ -2,13 +2,21 @@
 import "./navigationBar.css"
 import { NavLink, useLocation } from "react-router-dom"
 import PopUpCard from '../popupCard/index'
-import { useState } from "react"
+import { useEffect, useState } from "react"
 
 function NavigationBar({ currentUser, setCurrentUser }) {
 
   const [showPopup, setShowPopup] = useState(false)
+  const [currentlyAdmin, setCurrentlyAdmin] = useState(false)
   const location = useLocation();
   const path = location.pathname;
+
+  useEffect(()=> {
+    if (currentUser.foundUser.role === "ADMIN") {
+      setCurrentlyAdmin(true)
+    }
+  },[currentUser.foundUser.role])
+  
 
   return (
     <div className="navigation_bar">
@@ -27,7 +35,7 @@ function NavigationBar({ currentUser, setCurrentUser }) {
             <li><a onClick={() => setShowPopup(!showPopup)} className="link right"><p>{`Welcome ${currentUser.foundUser.firstName}`}</p></a></li>
             {showPopup ? (
               <PopUpCard>
-                <NavLink to={'/booking'}><p>Book a session</p></NavLink>
+                {!currentlyAdmin ? <NavLink to={'/booking'}><p>Book a session</p></NavLink> : <NavLink className={"clientNav"} to={'/clients'}><p>Clients</p></NavLink>}
                 <NavLink to={'/myProfile'}><p>Profile / Bookings</p></NavLink>
                 <NavLink to={'/'} onClick={() => { localStorage.removeItem("token"); setCurrentUser('') }}><p>Logout</p></NavLink>
               </PopUpCard>)
