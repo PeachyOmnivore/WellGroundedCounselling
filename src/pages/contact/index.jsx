@@ -1,6 +1,7 @@
 import "./contact.css"
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import insta from "../../assets/svgs/insta.svg"
+import { post } from "../../client-functions"
 
 function Contact() {
 
@@ -12,6 +13,11 @@ function Contact() {
   }
 
   const [formData, setFormData] = useState(INITIAL_STATE)
+  const [contactResponse, setContactResponse] = useState()
+
+  useEffect(() => {
+    setContactResponse("")
+  }, [])
 
   const onInput = (event) => {
     const { name, value } = event.target
@@ -22,21 +28,30 @@ function Contact() {
     })
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault()
-    event.target.reset()
-    console.log(formData)
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    try {
+      const data = await post(formData, "send-mail");
 
-    setFormData(INITIAL_STATE)
+      if (!data) {
+        setContactResponse(data.message);
+      } else {
+        setContactResponse("Message sent, thank-you.");
+        setTimeout(() => window.location.reload(), 2000)
+      }
+    } catch (err) {
+      setContactResponse(err.message)
+    }
+    setFormData(INITIAL_STATE);
   }
 
   return (
     <div className="contact-container">
       <section className="form-container">
         <div className="form-titles">
-        <h1>Get in Touch</h1>
-        <p>If you are interested in arranging a session you can either fill in the form below or email me -<br/><a href="mailto:fiona@wellgroundedcounselling.com">fiona@wellgroundedcounselling.com</a></p>
-        <a href="https://www.instagram.com/wellgroundedcounselling/"><img width="40px" src={insta} alt="Instagram logo" /></a>
+          <h1>Get in Touch</h1>
+          <p>If you are interested in arranging a session you can either fill in the form below or email me -<br /><a href="mailto:fiona@wellgroundedcounselling.com">fiona@wellgroundedcounselling.com</a></p>
+          <a href="https://www.instagram.com/wellgroundedcounselling/"><img width="40px" src={insta} alt="Instagram logo" /></a>
         </div>
         <form onSubmit={handleSubmit}>
           <label htmlFor="name">Name *</label>
@@ -57,7 +72,7 @@ function Contact() {
             value={formData.email}
             onChange={(event) => { onInput(event) }}
           />
-          <label htmlFor="subject">Subject</label>
+          <label htmlFor="subject">Subject *</label>
           <input
             type="text"
             name="subject"
@@ -65,7 +80,7 @@ function Contact() {
             value={formData.subject}
             onChange={(event) => { onInput(event) }}
           />
-          <label htmlFor="message">Message</label>
+          <label htmlFor="message">Message *</label>
           <textarea
             type="text"
             name="message"
@@ -75,8 +90,9 @@ function Contact() {
             onChange={(event) => { onInput(event) }}
           />
           <button type="submit">Submit</button>
+          {contactResponse ? <p className="contactResponse">{contactResponse}</p> : ""}
         </form>
-      <p className="required">* required</p>
+        <p className="required">* required</p>
       </section>
     </div>
   )
