@@ -12,19 +12,19 @@ function UserProfile({ user }) {
     setEditedUser({ ...user });
   }, [user]);
 
-  console.log("EDITEDUSER", editedUser)
-
   const handleEdit = () => {
     setEditing(true);
   };
 
   const cancelBooking = async (timeSlotId) => {
     await put(undefined, `bookings/cancel/${timeSlotId}`)
+    window.location.reload();
   }
 
   const handleSave = async () => {
     await put(editedUser, `users/${user.id}`)
     setEditing(false);
+    window.location.reload();
   };
 
   const handleChange = (e) => {
@@ -47,6 +47,7 @@ function UserProfile({ user }) {
           {editing ? <Button className={'editSaveButton'} text={"Save"} onClick={handleSave} /> : <Button className={'editSaveButton'} text={"Edit"} onClick={handleEdit} />}
         </form>
         <h2>Bookings</h2>
+        
         {user.timeSlot.map((timeslot, index) => (
           <div className='timeslot' key={index}>
             <p>{timeslot.availableDate.month} {timeslot.availableDate.day} at {timeslot.time}</p>
