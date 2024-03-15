@@ -1,8 +1,7 @@
 const serverURL = "http://localhost:3030";
+const token = localStorage.getItem("token");
 
 async function get(endpoint) {
-    const token = localStorage.getItem("token");
-
     if (!token) {
         throw new Error("No token found");
     }
@@ -55,5 +54,27 @@ async function put(bodyData = {}, endpoint) {
     return data;
 }
 
+async function deleteTimeSlot(endpoint){
+    const options = {
+        method: "DELETE",
+        headers: {
+            Authorization: `Bearer ${token}`,
+        },
+    };
+    try {
+        const response = await fetch(`${serverURL}/${endpoint}`, options);
+        if (!response.ok) {
+            throw new Error(
+                `Error: ${response.status} - ${response.statusText}`
+            );
+        }
+        const data = await response.json();
+        return data;
 
-export { get, post, put };
+    } catch (err) {
+        console.error("Error deleting requested info:", err);
+    }
+}
+
+
+export { get, post, put, deleteTimeSlot };
