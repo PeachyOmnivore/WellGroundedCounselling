@@ -37,8 +37,13 @@
   font-weight: 100;
 }
 
+
 .form-titles a {
   color: #f3f4ea;
+}
+
+.form-titles img {
+  margin-top: 20px;
 }
 
 .form-container input, .form-container textarea, .form-container select {
@@ -85,6 +90,11 @@
 
 .required {
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   left: 30px;
+}
+
+.contactResponse {
+  margin-top: 20px;
+  text-align: center;
 }
