@@ -25,7 +25,7 @@ function NavigationBar({ currentUser, setCurrentUser }) {
         <li><NavLink className={path === "/about" ? "link currentPage" : "link"} to={'/about'}><p>About</p></NavLink></li>
         <li><NavLink className={path === "/my-approach" ? "link currentPage" : "link"} to={'/my-approach'}><p>My approach</p></NavLink></li>
         <li><NavLink className={path === "/services-and-fees" ? "link currentPage" : "link"} to={'/services-and-fees'}><p>Services and fees</p></NavLink></li>
-        {currentUser && <li><NavLink className={path === "/booking" ? "link currentPage" : "link"} to={'/booking'}><p>Book a session</p></NavLink></li>}
+        {currentUser && <li><NavLink className={path === "/booking" ? "link currentPage" : "link"} to={'/booking'}>{!currentlyAdmin? <p>Book a session</p> : <p>Add / Remove Sessions</p>}</NavLink></li>}
         <li><NavLink className={path === "/contact" ? "link currentPage" : "link"} to={'/contact'}><p>Contact</p></NavLink></li>
         <li><NavLink className={path === "/privacy-policy" ? "link currentPage" : "link"} to={'/privacy-policy'}><p>Privacy policy</p></NavLink></li>
       </ul>
