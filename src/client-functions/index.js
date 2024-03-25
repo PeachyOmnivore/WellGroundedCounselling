@@ -1,4 +1,4 @@
-const serverURL = "http://13.48.131.202:2808"
+const serverURL = "http://wellgroundedcounsellingserver.railway.internal"
 
 async function get(endpoint) {
     const token = localStorage.getItem("token");
