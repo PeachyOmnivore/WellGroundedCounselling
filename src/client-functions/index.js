@@ -1,7 +1,7 @@
-import dotenv from "dotenv"
-dotenv.config()
+// import dotenv from "dotenv"
+// dotenv.config()
 // eslint-disable-next-line no-undef
-const serverURL = process.env.SERVER_URL
+const serverURL = "13.48.131.202:2808"
 
 async function get(endpoint) {
     const token = localStorage.getItem("token");
