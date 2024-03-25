@@ -1,7 +1,10 @@
-const serverURL = "http://localhost:3030";
-const token = localStorage.getItem("token");
+import dotenv from "dotenv"
+dotenv.config()
+// eslint-disable-next-line no-undef
+const serverURL = process.env.SERVER_URL
 
 async function get(endpoint) {
+    const token = localStorage.getItem("token");
     if (!token) {
         throw new Error("No token found");
     }
@@ -55,6 +58,7 @@ async function put(bodyData = {}, endpoint) {
 }
 
 async function deleteTimeSlot(endpoint){
+    const token = localStorage.getItem("token");
     const options = {
         method: "DELETE",
         headers: {
@@ -75,6 +79,5 @@ async function deleteTimeSlot(endpoint){
         console.error("Error deleting requested info:", err);
     }
 }
-
 
 export { get, post, put, deleteTimeSlot };

@@ -9,7 +9,6 @@ function NavigationBar({ currentUser, setCurrentUser, currentlyAdmin }) {
   const [showPopup, setShowPopup] = useState(false)
   const location = useLocation();
   const path = location.pathname;
-  
 
   return (
     <div className="navigation_bar">

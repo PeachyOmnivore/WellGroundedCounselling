@@ -16,7 +16,6 @@ import UserProfile from './pages/userProfile'
 
 
 function App() {
-
   const navigate = useNavigate()
   const [currentUser, setCurrentUser] = useState('')
   const [currentlyAdmin, setCurrentlyAdmin] = useState(false)
@@ -25,15 +24,17 @@ function App() {
     async function findUser() {
       try {
         const foundUser = await get("users/me");
+
         if (foundUser.foundUser.role === "ADMIN") {
           setCurrentlyAdmin(true)
         }
-        // console.log(foundUser)
+        console.log(foundUser)
         setCurrentUser(foundUser);
 
         if (!foundUser) {
           navigate('/')
         }
+
       } catch (err) {
         console.error('Error fetching user info:', err);
       }

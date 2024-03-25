@@ -37,6 +37,7 @@ function Login() {
         if (loginData.remember) {
           localStorage.setItem("token", data.token);
         }
+        
         setTimeout(() => navigate('/'), 2000)
       }
 
