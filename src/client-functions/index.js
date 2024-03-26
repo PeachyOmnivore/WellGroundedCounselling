@@ -1,4 +1,4 @@
-const serverURL = "http://wellgroundedcounsellingserver.railway.internal"
+const serverURL = "https://viaduct.proxy.rlwy.net:35837"
 
 async function get(endpoint) {
     const token = localStorage.getItem("token");
