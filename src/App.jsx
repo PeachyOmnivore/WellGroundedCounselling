@@ -28,7 +28,6 @@ function App() {
         if (foundUser.foundUser.role === "ADMIN") {
           setCurrentlyAdmin(true)
         }
-        console.log(foundUser)
         setCurrentUser(foundUser);
 
         if (!foundUser) {
