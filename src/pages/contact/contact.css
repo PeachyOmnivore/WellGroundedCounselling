@@ -47,13 +47,17 @@
 }
 
 .form-container input, .form-container textarea, .form-container select {
-  color: #f3f4ea;
+  color: #ffffff;
   background-color: rgb(55, 54, 54);
   width: 50vw;
   height: 30px;
   padding: 5px;
   border-radius: 5px;
   border: #f3f4ea solid 1px;
+}
+
+.form-container input::placeholder, .form-container textarea::placeholder, .form-container select::placeholder {
+  color: rgba(255, 255, 255, 0.774);
 }
 
 .form-container textarea {
