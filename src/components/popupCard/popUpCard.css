@@ -1,13 +1,10 @@
 .popUpCard-container {
   display: grid;
-
-  position: relative;
-  top: 15px;
-  right: 15px;
-
+  position: absolute;
+  top: 45px;
+  right: 10;
   z-index: 100;
   width: 200px;
-
   background-color: #5B612E;
   box-shadow: black 1px 1px 20px 1px;
   border-radius: 10px;
@@ -23,7 +20,7 @@
   color: #f3f4f3;
 }
 
-.popUpCard-container > *:last-child{
+.popUpCard-container > *:last-child {
   border-bottom: none;
 }
 
@@ -34,6 +31,36 @@
 
 .clientNav {
   color: #e8ad48;
+}
+
+/* Media Queries */
+/* All to align pop-up with welcome profile nav button */
+@media screen and (max-width: 1024px) {
+  .popUpCard-container {
+    top: 85px;
+    right: 40%; 
+  }
+}
+
+@media screen and (max-width: 997px) {
+  .popUpCard-container {
+    top: 115px;
+    right: 38%; 
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .popUpCard-container {
+    top: 280px;
+    right: 38%; 
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .popUpCard-container {
+    top: 350px;
+    right: 28%; 
+  }
 }
 
 
