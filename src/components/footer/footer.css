@@ -4,6 +4,7 @@
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #5B612E;
   padding: 20px;
+  min-width: 100vw;
 }
 
 .footer p {

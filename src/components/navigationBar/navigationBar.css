@@ -3,6 +3,7 @@
   grid-template-columns: .9fr .2fr;
   background-color: black;
   height: 40px;
+  min-width: 100vw;
 }
 
 .navigation_bar ul {
