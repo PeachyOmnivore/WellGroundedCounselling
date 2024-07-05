@@ -3,10 +3,14 @@
   grid-template-columns: .9fr .2fr;
   background-color: black;
   height: 40px;
-  
 }
 
-.navigation_bar ul li{
+.navigation_bar ul {
+  padding: 0;
+  margin: 0;
+}
+
+.navigation_bar ul li {
   display: inline-block;
   text-decoration: none;
   list-style: none;
@@ -19,21 +23,61 @@
 
 .link.currentPage {
   text-decoration: underline;
-  color: #c55a36
+  color: #c55a36;
 }
 
-.link.right p {
-  color: rgba(255, 255, 255, 0.786);
-  padding: 0px 15px
-}
-
+.link.right p,
 .navigation_bar ul li p {
   color: rgba(255, 255, 255, 0.786);
-  padding: 0px 15px
+  padding: 0px 15px;
 }
 
 .navigation_bar ul li p:hover {
   color: #c55a36;
   cursor: pointer;
+}
+
+/* Media Queries */
+
+/* For smaller monitors */
+@media screen and (max-width: 1024px) {
+  .navigation_bar {
+    grid-template-columns: 1fr;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  .navigation_bar ul {
+    text-align: center;
+  }
+
+  .navigation_bar ul li {
+    margin: 5px 0;
+  }
+}
+
+/* For tablets phones */
+@media screen and (max-width: 768px) {
+  .navigation_bar ul li {
+    display: block;
+    margin: 10px 0;
+  }
+
+  .link.right {
+    text-align: center;
+    margin-top: 10px;
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .navigation_bar {
+    padding: 5px 0;
+  }
+
+  .navigation_bar ul li p,
+  .link.right p {
+    padding: 5px 10px;
+  }
 }
 
