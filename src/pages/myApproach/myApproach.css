@@ -1,7 +1,7 @@
 .my-approach-container {
   display: grid;
   place-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-image: url('../../assets/images/nsplsh_9896bfc9c61c4427a66c51ce52fb1414~mv2.webp');
   background-size: cover;
 }
@@ -25,4 +25,21 @@
   background-color: black;
   width: 45vw;
   padding: 70px;
+  margin: 20px;
+}
+
+/* Media Queries */
+
+/* For large screens */
+@media screen and (max-width: 1440px) {
+  .my-approach-details {
+    width: 70vw;
+  }
+}
+
+/* For small monitors */
+@media screen and (max-width: 1024px) {
+  .my-approach-details {
+    padding: 20px;
+  }
 }
