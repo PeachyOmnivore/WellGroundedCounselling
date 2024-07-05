@@ -1,6 +1,7 @@
 .home-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
+  min-width: 100vw;
 }
 
 .home-grid section {
