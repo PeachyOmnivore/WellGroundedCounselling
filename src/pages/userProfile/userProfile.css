@@ -1,8 +1,9 @@
 .userProfile-container {
   display: grid;
   place-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #e8ad48;
+  padding: 10px;
 }
 
 .userProfile-container h2 {
@@ -45,4 +46,36 @@
 .editSaveButton {
 position: relative;
 left: 20px;
+}
+
+/* Media Queries */
+
+/* For tablet screens */
+@media screen and (max-width: 768px) {
+  .user-details {
+    width: 90%;
+    max-width: 500px;
+    padding: 30px;
+  }
+
+  .userProfile-container button {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .editSaveButton {
+    position: static;
+    margin-top: 20px;
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .user-details {
+    padding: 20px;
+  }
+
+  .userProfile-container h2 {
+    font-size: 24px;
+  }
 }
