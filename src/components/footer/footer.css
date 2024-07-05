@@ -3,21 +3,27 @@
   place-items: center;
   grid-template-columns: 1fr 1fr 1fr;
   background-color: #5B612E;
+  padding: 20px;
 }
 
 .footer p {
   color: #f4f3EA;
+  text-align: center;
 }
 
 .footer img {
   margin: 20px;
-  width: 500px;
+  width: 100%;
+  max-width: 500px;
 }
 
 .footer button {
   border: #f4f3EA solid 1px;
   color: #f4f3EA;
   background-color: #5B612E;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
 }
 
 .footer button:hover {
@@ -27,4 +33,50 @@
 
 .footer button:active {
   background-color: #f4f3ea71;
+}
+
+/* Media Queries */
+
+/* For small monitor screens */
+@media screen and (max-width: 1024px) {
+  .footer {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .footer img {
+    grid-column: span 2;
+    margin: 10px;
+  }
+}
+
+/* For tablet screens */
+@media screen and (max-width: 768px) {
+  .footer {
+    grid-template-columns: 1fr;
+  }
+
+  .footer img {
+    grid-column: auto;
+    margin: 10px 0;
+  }
+
+  .footer button {
+    margin-top: 10px;
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .footer {
+    padding: 10px;
+  }
+
+  .footer img {
+    max-width: 300px;
+  }
+
+  .footer button {
+    padding: 8px 16px;
+  }
 }
