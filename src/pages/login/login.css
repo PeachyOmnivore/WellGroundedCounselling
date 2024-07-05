@@ -1,7 +1,7 @@
 .login-container {
   display: grid;
   place-items: center;
-  height: 100vh;
+  min-height: 100vh;
   background-color: #f3f4ea;
 }
 
@@ -90,4 +90,45 @@
   color: #f3f4ea;
   text-align: center;
   margin-top: 10px;
+}
+
+
+/* Media Queries */
+
+/* For tablet screens */
+@media screen and (max-width: 768px) {
+  .login-form-container {
+    width: 90%;
+    max-width: 500px;
+    height: auto;
+    padding: 30px;
+  }
+
+  .login-header {
+    grid-template-columns: 1fr;
+  }
+
+  .login-header img,
+  .login-header h1 {
+    position: static;
+    right: 0;
+  }
+
+  .login-container a {
+    position: static;
+    display: block;
+    text-align: center;
+    margin-top: 20px;
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .login-form-container {
+    padding: 20px;
+  }
+
+  .login-header h1 {
+    font-size: 28px;
+  }
 }
