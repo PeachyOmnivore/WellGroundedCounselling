@@ -7,7 +7,7 @@
   display: grid;
   height: 900px;
   background-color: #f4f3EA;
-  padding: 0px 175px 0px 175px
+  padding: 0 175px;
 }
 
 .home-grid section h4 {
@@ -24,6 +24,72 @@
 
 .home-img {
   object-fit: contain;
-  width: 1200px;
+  width: 100%;
+  max-width: 1200px;
   z-index: 100;
+}
+
+
+
+/* Media Queries */
+
+/* For large screens */
+@media screen and (max-width: 1440px) {
+  .home-grid section {
+    padding: 0 100px;
+  }
+
+  .home-grid section h4 {
+    font-size: 60px;
+  }
+}
+
+/* For small monitor screens */
+@media screen and (max-width: 1024px) {
+  .home-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .home-grid section,
+  .img-container {
+    width: 100%;
+    height: auto;
+  }
+
+  .home-grid section {
+    padding: 50px;
+    place-items: center;
+  }
+
+  .home-grid section h4 {
+    font-size: 48px;
+  }
+
+
+}
+
+/* For tablet screens */
+@media screen and (max-width: 768px) {
+  .home-grid section {
+    padding: 30px;
+  }
+
+  .home-grid section h4 {
+    font-size: 36px;
+  }
+}
+
+/* For mobile screens */
+@media screen and (max-width: 480px) {
+  .home-grid section {
+    padding: 10px;
+  }
+
+  .home-grid section h4 {
+    font-size: 28px;
+  }
+
+  .home-grid section button {
+    margin: 10px;
+  }
 }
