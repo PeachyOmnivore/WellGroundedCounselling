@@ -57,7 +57,7 @@
   }
 }
 
-/* For tablets phones */
+/* For tablet screens */
 @media screen and (max-width: 768px) {
   .navigation_bar ul li {
     display: block;

@@ -7,6 +7,7 @@ import { useState } from "react"
 function NavigationBar({ currentUser, setCurrentUser, currentlyAdmin }) {
 
   const [showPopup, setShowPopup] = useState(false)
+  const [showNav, setShowNav] = useState(false)
   const location = useLocation();
   const path = location.pathname;
 
