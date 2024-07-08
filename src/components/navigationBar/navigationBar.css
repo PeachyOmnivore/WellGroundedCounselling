@@ -64,11 +64,11 @@
 
 /* For tablet screens */
 @media screen and (max-width: 768px) {
-  .navigation_bar  {
+  .navigation_bar {
     align-items: center;
     place-items: center;
   }
-  
+
   .navigation_bar ul li {
     display: grid;
     margin: 10px 0;
@@ -79,7 +79,7 @@
     margin-top: 10px;
   }
 
-  .navigation_bar .hamburger-nav{
+  .navigation_bar .hamburger-nav {
     display: grid;
     place-items: center;
   }
@@ -96,4 +96,3 @@
     padding: 5px 10px;
   }
 }
-

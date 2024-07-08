@@ -18,7 +18,7 @@ function NavigationBar({ currentUser, setCurrentUser, currentlyAdmin }) {
 
   return (
     <>
-      {hamburgerOpen ? (<li className="hamburger-nav navigation_bar" onClick={toggleHamburger}><Hamburger /></li>) : (
+      {!hamburgerOpen ? (<li className="hamburger-nav navigation_bar" onClick={toggleHamburger}><Hamburger /></li>) : (
         <div className="navigation_bar">
           <ul>
           <li className="hamburger-nav navigation_bar" onClick={toggleHamburger}><Hamburger /></li>
