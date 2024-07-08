@@ -20,6 +20,11 @@
   color: #f3f4f3;
 }
 
+.popUpCard-container > p {
+  padding-right: 15px;
+  text-align: end;
+}
+
 .popUpCard-container > *:last-child {
   border-bottom: none;
 }
@@ -58,8 +63,8 @@
 
 @media screen and (max-width: 480px) {
   .popUpCard-container {
-    top: 350px;
-    right: 28%; 
+    top: 410px;
+    right: 25%; 
   }
 }
 

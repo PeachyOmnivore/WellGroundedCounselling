@@ -34,6 +34,7 @@ function NavigationBar({ currentUser, setCurrentUser, currentlyAdmin }) {
               <li><a onClick={() => setShowPopup(!showPopup)} className="link right"><p>{`Welcome ${currentUser.foundUser.firstName}`}</p></a></li>
               {showPopup ? (
                 <PopUpCard>
+                  <p className="closeButton" onClick={() => (setShowPopup(false))}>X</p>
                   {!currentlyAdmin ? <NavLink to={'/booking'}><p>Book a session</p></NavLink> : <NavLink className={"clientNav"} to={'/clients'}><p>Clients</p></NavLink>}
                   <NavLink to={'/myProfile'}><p>Profile / Bookings</p></NavLink>
                   <NavLink to={'/'} onClick={() => { localStorage.removeItem("token"); setCurrentUser('') }}><p>Logout</p></NavLink>
