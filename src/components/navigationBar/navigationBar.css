@@ -1,3 +1,7 @@
+.navigation_bar .hamburger-nav {
+  display: none;
+}
+
 .navigation_bar {
   display: grid;
   grid-template-columns: .9fr .2fr;
@@ -38,6 +42,7 @@
   cursor: pointer;
 }
 
+
 /* Media Queries */
 
 /* For smaller monitors */
@@ -59,14 +64,24 @@
 
 /* For tablet screens */
 @media screen and (max-width: 768px) {
+  .navigation_bar  {
+    align-items: center;
+    place-items: center;
+  }
+  
   .navigation_bar ul li {
-    display: block;
+    display: grid;
     margin: 10px 0;
   }
 
   .link.right {
     text-align: center;
     margin-top: 10px;
+  }
+
+  .navigation_bar .hamburger-nav{
+    display: grid;
+    place-items: center;
   }
 }
 
