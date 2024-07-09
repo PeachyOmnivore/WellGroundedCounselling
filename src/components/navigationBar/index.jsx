@@ -18,7 +18,7 @@ function NavigationBar({ currentUser, setCurrentUser, currentlyAdmin }) {
 
   return (
     <nav className={`navigation_bar ${hamburgerOpen ? 'open' : ''}`}>
-      <div className="hamburger-nav" onClick={toggleHamburger}><Hamburger /></div>
+      <div className="hamburger-nav" onClick={toggleHamburger}><Hamburger isOpen={hamburgerOpen}/></div>
         <ul className="menu-items">
           <li><NavLink className={path === "/" ? "link currentPage" : "link"} to={'/'}><p>Home</p></NavLink></li>
           <li><NavLink className={path === "/about" ? "link currentPage" : "link"} to={'/about'}><p>About</p></NavLink></li>
