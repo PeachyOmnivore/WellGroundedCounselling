@@ -1,12 +1,13 @@
 import "./hamburger.css"
 
-function Hamburger() {
+// eslint-disable-next-line react/prop-types
+function Hamburger({ isOpen }) {
   return (
   <>
   <div className="hamburger">
-    <div className="burger burger1"></div>
-    <div className="burger burger2"></div>
-    <div className="burger burger3"></div>
+    <div className={`burger burger1 ${isOpen ? 'burger1Open' : ''}`}></div>
+    <div className={`burger burger2 ${isOpen ? 'burger2Open' : ''}`}></div>
+    <div className={`burger burger3 ${isOpen ? 'burger3Open' : ''}`}></div>
   </div>
   </>
   )

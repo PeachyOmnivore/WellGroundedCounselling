@@ -15,3 +15,29 @@
   transition: all 0.3s linear;
 }
 
+.burger1{
+  rotate: 0deg;
+}
+
+.burger1Open {
+  rotate: 45deg;
+}
+
+.burger2{
+  transform: translate(0);
+  opacity: 1;
+}
+
+.burger2Open {
+  transform: translate(100%);
+  opacity: 0;
+}
+
+.burger3{
+  rotate: 0deg;
+}
+
+.burger3Open {
+  rotate: -45deg;
+}
+
